@@ -1,7 +1,5 @@
+import React from 'react'
+import ReactDOM from 'react-dom'
 import App from "./App.js"
 
-const hello = name => {
-  console.log(`hello ${name}`)
-}
-
-App()
+ReactDOM.render(<App />, document.getElementById('root'))
