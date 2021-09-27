@@ -1,8 +1,17 @@
 import path from 'path'
+import webpack from 'webpack'
+
 const __dirname = path.resolve()
 
-const config = {
-  //entry point for bundling
+const config = (env, argv) => {
+  console.log(`argv.mode`, argv.mode)
+
+  const backend_url = argv.mode === 'production'
+    ? 'https://still-sea-39428.herokuapp.com/api/notes'
+    : 'http://localhost:3001/notes'
+
+  return {
+    //entry point for bundling
   entry: './src/index.js',
   //bundled code storage, path must be absolute (path.resolve(...))
   //__dirname stores the path to the current directory
@@ -41,6 +50,12 @@ const config = {
         use: ['style-loader', 'css-loader']
       }
     ]
+  },
+  plugins: [
+    new webpack.DefinePlugin({
+      BACKEND_URL: JSON.stringify(backend_url)
+    })
+  ]
   }
 }
 
