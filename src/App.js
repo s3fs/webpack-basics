@@ -1,8 +1,9 @@
 import React from 'react'
+import './index.css'
 
 const App = () => {
  return (
-  <div>Hello Webpack</div>
+  <div className='container'>Hello Webpack</div>
  )
 }
 

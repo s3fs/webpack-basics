@@ -26,6 +26,13 @@ const config = {
         options: {
           presets: ['@babel/preset-env','@babel/preset-react']
         }
+      },
+      {
+        test: /\.css$/,
+        //cl loads styles & sl generates and injects a <style> el
+        //css defs r included in main.js (no need to import them in index file)
+        //otherwise use mini-css-extract-plugin
+        use: ['style-loader', 'css-loader']
       }
     ]
   }
