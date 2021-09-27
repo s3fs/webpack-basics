@@ -1,5 +1,4 @@
 import path from 'path'
-import 'core-js/stable'
 const __dirname = path.resolve()
 
 const config = {
@@ -11,8 +10,9 @@ const config = {
     path: path.resolve(__dirname, 'build'),
     filename: 'main.js'
   },
+  //loader are required for e.g. bundling react (jsx) files
   //loaders definde under module prop
-  //loaders require installation as a dev-dep
+  //loaders require installation as a dev-dej
   //npm i @babel/core babel-loader @babel/preset-react --save-dev
   module: {
     //in the rules arr
@@ -24,7 +24,7 @@ const config = {
         loader: 'babel-loader',
         //loader params
         options: {
-          presets: ['@babel/preset-react']
+          presets: ['@babel/preset-env','@babel/preset-react']
         }
       }
     ]
