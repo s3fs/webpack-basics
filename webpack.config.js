@@ -10,6 +10,11 @@ const config = {
     path: path.resolve(__dirname, 'build'),
     filename: 'main.js'
   },
+  devServer: {
+    static: path.resolve(__dirname, 'build'),
+    compress: true,
+    port: 3000
+  },
   //loader are required for e.g. bundling react (jsx) files
   //loaders definde under module prop
   //loaders require installation as a dev-dej
