@@ -15,6 +15,7 @@ const config = {
     compress: true,
     port: 3000
   },
+  devtool: 'source-map',
   //loader are required for e.g. bundling react (jsx) files
   //loaders definde under module prop
   //loaders require installation as a dev-dej
